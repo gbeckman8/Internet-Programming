@@ -1,6 +1,5 @@
 <?php
 
-require_once("file_exceptions.php");
 
 // create short variable names
 $tireqty = (int) $_POST['tireqty'];
