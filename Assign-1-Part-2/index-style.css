@@ -1,0 +1,61 @@
+body {
+    background-color: #FFC425;
+}
+
+div.container {
+    margin: auto;
+}
+
+div.header {
+    margin: auto;
+    width: 50em;
+    background: #231F20;
+}
+
+div.logo {
+    margin: auto;
+    width: 30em;
+    padding: 1em;
+}
+
+h1.headState {
+    margin: auto;
+    width: 40em;
+    color: white;
+    padding: 2em;
+}
+
+div.main {
+    margin: auto;
+    width: 50em;
+    display: flex;
+}
+
+div.sidebar {
+    background: green;
+    padding: 0.5em;
+}
+
+ul.assignmentList {
+    padding: 0.5em;
+}
+
+div.personalInfo {
+    background: white;
+    padding-left: 3em;
+    width: 100%;
+}
+
+div.infoBlock {
+    display: flex;
+}
+
+img.picture {
+    max-height: 10em;
+    max-width: 20em;
+}
+
+ul.courses {
+    padding-inline-start: 2em;
+    margin: 0 auto;
+}
