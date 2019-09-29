@@ -7,8 +7,13 @@
         <h1>Bob's Auto Parts</h1>
         <h2>Order Results</h2>
         <?php
-            echo '<p>Order processed.</p>';
+            echo "<p>Order processed at ";
+            echo date('H:i, jS F Y');
+            echo "</p>";
             $totalqty = 0;
+            $tireqty = $_POST['tireqty'];
+            $oilqty = $_POST['oilqty'];
+            $sparkqty = $_POST['sparkqty'];
             $totalqty = $tireqty + $oilqty + $sparkqty;
             echo "<p>Items ordered: ".$totalqty."<br />";
             $totalamount = 0.00;
