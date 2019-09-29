@@ -1,11 +1,12 @@
 <?php
+  require_once("file_exceptions.php");
   // create short variable names
-  $tireqty = (int) $_POST['tireqty'];
-  $oilqty = (int) $_POST['oilqty'];
-  $sparkqty = (int) $_POST['sparkqty'];
-  $address = preg_replace('/\t|\R/',' ',$_POST['address']);
-  $document_root = $_SERVER['DOCUMENT_ROOT'];
-  $date = date('H:i, jS F Y');
+  $tireqty = (int) $_POST['tireqty'];                                           
+  $oilqty = (int) $_POST['oilqty'];                                             
+  $sparkqty = (int) $_POST['sparkqty'];                                         
+  $address = preg_replace('/\t|\R/',' ',$_POST['address']);                     
+  $document_root = $_SERVER['DOCUMENT_ROOT'];                                   
+  $date = date('H:i, jS F Y'); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,18 +50,34 @@
       $outputstring = $date."\t".$tireqty." tires \t".$oilqty." oil\t"
                       .$sparkqty." spark plugs\t\$".$totalamount
                       ."\t". $address."\n";
-       // open file for appending
-       $fp = fopen("$document_root/../orders/orders.txt", 'a+');
-       if (!$fp) {
-         echo "<p><strong> Your order could not be processed at this time.
+      // open file for appending
+      try
+      {
+        if (!($fp = @fopen("orders.txt", 'ab'))) {
+            throw new fileOpenException();
+        }
+      
+        if (!flock($fp, LOCK_EX)) {
+           throw new fileLockException();
+        }
+      
+        if (!fwrite($fp, $outputstring, strlen($outputstring))) {
+           throw new fileWriteException();
+        }
+        flock($fp, LOCK_UN);
+        fclose($fp);
+        echo "<p>Order written.</p>";
+      }
+      catch (fileOpenException $foe)
+      {
+         echo "<p><strong>Orders file could not be opened.<br/>
+               Please contact our webmaster for help.</strong></p>";
+      }
+      catch (Exception $e)
+      {
+         echo "<p><strong>Your order could not be processed at this time.<br/>
                Please try again later.</strong></p>";
-         exit;
-       }
-       flock($fp, LOCK_EX);
-       fwrite($fp, $outputstring, strlen($outputstring));
-       flock($fp, LOCK_UN);
-       fclose($fp);
-       echo "<p>Order written.</p>";
+      }
     ?>
   </body>
 </html>
