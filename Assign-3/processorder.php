@@ -1,4 +1,5 @@
 <?php
+
 // create short variable names
 $tireqty = (int) $_POST['tireqty'];
 $oilqty = (int) $_POST['oilqty'];
@@ -52,6 +53,7 @@ $date = date('H:i, jS F Y');
         . $sparkqty . " spark plugs\t\$" . $totalamount
         . "\t" . $address . "\n";
     // open file for appending
+
     try {
         if (!($fp = @fopen("$document_root/../orders/orders.txt", 'ab'))) {
             throw new fileOpenException();
@@ -74,6 +76,7 @@ $date = date('H:i, jS F Y');
         echo "<p><strong>Your order could not be processed at this time.<br/>
                Please try again later.</strong></p>";
     }
+  
     ?>
 </body>
 
