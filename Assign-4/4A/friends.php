@@ -105,7 +105,7 @@
 			
 		</table>
 		<footer align='center'>
-			&copy; All Rights Reserved.	
+			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project.	
 			</footer>
 </body>
 </html>
