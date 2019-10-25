@@ -85,7 +85,10 @@
 	
 		//include 'mysql.php';
 		$resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
-		if($resid) {
+			if(MySQLi_Connect_Errno()) {
+				echo "<tr align='center'> <td colspan='5'> Failed to connect to MySQL </td> </tr>";
+			}
+			else {
 		$user_id = $_SESSION['user_id'];
 		$query = "insert into status_here (status,user_id,timestamp,future_use) values ('$status',$user_id,NOW(),NULL)";
 		$qwer = MySQLi_Query($resid,$query);

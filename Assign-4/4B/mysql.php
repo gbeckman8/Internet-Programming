@@ -6,5 +6,3 @@ $resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
 					}
 					else {
 					}
-
-?>

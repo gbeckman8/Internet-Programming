@@ -40,5 +40,3 @@ $frnd_name=$_SESSION["name"];
 					else {
 						Header("Location: home.php");
 					}
-?>
-

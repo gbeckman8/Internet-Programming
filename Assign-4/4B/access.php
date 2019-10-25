@@ -58,4 +58,3 @@ if(IsSet($_POST["accp"])||IsSet($_POST["decl"])) {
 						
 						Header("Location: home.php");
 					}
-?>
