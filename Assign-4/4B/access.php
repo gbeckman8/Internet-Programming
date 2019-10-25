@@ -1,4 +1,6 @@
 <?php
+include 'mysql.php';
+
 Session_Start();
 $f=0;
 $frnd_id=$_POST["header1"];
@@ -12,11 +14,7 @@ if(IsSet($_POST["accp"])||IsSet($_POST["decl"])) {
 	}
 
 			if(IsSet($_SESSION["user_id"])) {				
-					$resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
-					if(MySQLi_Connect_Errno()) {
-					echo "<tr align='center'> <td colspan='5'> Failed to connect to MySQL </td> </tr>";
-					}
-					else {
+				if($resid) {
 						if($f==1) {
 							$query="update friends set status=1,comp=1 where receiver_id=".$_SESSION["user_id"]." and friend_id=".$frnd_id.""; 
 							$walla1=MySQLi_Query($resid,$query);

@@ -1,4 +1,6 @@
 <?php
+include 'mysql.php';
+
 Session_Start();
 if(IsSet($_SESSION["user_id"])) {
 $recv_id=$_POST["h1"];
@@ -8,11 +10,7 @@ $frnd_name=$_SESSION["name"];
 
 
 
-			$resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
-			if(MySQLi_Connect_Errno()) {
-				echo "<tr align='center'> <td colspan='5'> Failed to connect to MySQL </td> </tr>";
-			}
-			else {
+			if($resid) {
 				$count=MySQLi_Query($resid,"select (max(id)+1) as count from friends");
 				$count_id=MySQLi_Fetch_Assoc($count);
 				if($count_id["count"]) {

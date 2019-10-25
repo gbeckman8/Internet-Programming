@@ -119,7 +119,8 @@
 				</td>
 			</tr>
 	<?php
-	
+	include 'mysql.php';
+
 	$name=$email=$age=$gender=$password=$count=$count_id="";
 	if($_SERVER["REQUEST_METHOD"]=="POST") {
 		function sec($data) {
@@ -137,11 +138,7 @@
 			//$query="INSERT INTO studs VALUES('$name','$email',$age);";
 		//MySQL Magic :D
 			//Getting Resource ID
-			$resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
-			if(MySQLi_Connect_Errno()) {
-				echo "<tr align='center'> <td colspan='5'> Failed to connect to MySQL </td> </tr>";
-			}
-			else {
+			if($resid) {
 			$check_email=MySQLi_Query($resid,"select name from students where email='".$email."'");
 			$r_email=MySQLi_Fetch_Row($check_email);
 			

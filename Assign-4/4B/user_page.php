@@ -37,6 +37,8 @@
 			</tr>
 			
 			<?php
+			include 'mysql.php';
+
 			//Session_start();
 			$email=$password=$no_msg="";
 			
@@ -63,11 +65,7 @@
 		    $password=$_POST["p1"];
 			}
 			$query="select * from students where email='$email' and password='$password'";
-			$resid=MySQLi_Connect('localhost','gbeckman','gray','gbeckman');
-			if(MySQLi_Connect_Errno()) {
-				echo "<tr align='center'> <td colspan='5'> Failed to connect to MySQL </td> </tr>";
-			}
-			else {
+			if($resid) {
 				$result=MySQLi_Query($resid,$query);
 				
 				$array=MySQLi_Fetch_Assoc($result);
