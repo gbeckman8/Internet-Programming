@@ -95,7 +95,7 @@
 				}
 
 				if ($f < 2) {
-					echo "<tr align='center'> <td colspan='5'><font color='lightblue'> No Friend Requests!</font> </td> </tr>";
+					echo "<tr align='center'> <td colspan='5'><font color='black'> No Friend Requests!</font> </td> </tr>";
 				}
 
 				MySQLi_Close($resid);
