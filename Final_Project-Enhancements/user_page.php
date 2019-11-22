@@ -35,17 +35,17 @@
 						<a href='signout.php'>Signout </a>
 					</div>
 				</td>
-				<td valign='top'>
+				<td valign='top', align = 'left'>
 					<div class="vertical-menu">
 						<a href='friends.php'>Friends </a>
 					</div>
 				</td>
-				<td valign='top'>
+				<td valign='top', align = 'left'>
 					<div class="vertical-menu">
 						<a href='update_status.php'> Status Update </a>
 					</div>
 				</td>
-				<td valign='top'>
+				<td valign='top', align = 'left'>
 					<div class="vertical-menu">
 						<a href='friend_list.php'>Friend List</a>
 					</div>
