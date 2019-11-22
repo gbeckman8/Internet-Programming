@@ -35,17 +35,17 @@
 						<a href='signout.php'>Signout </a>
 					</div>
 				</td>
-				<td valign='top', align = 'left'>
+				<td valign='top' , align='left'>
 					<div class="vertical-menu">
 						<a href='friends.php'>Friends </a>
 					</div>
 				</td>
-				<td valign='top', align = 'left'>
+				<td valign='top' , align='left'>
 					<div class="vertical-menu">
 						<a href='update_status.php'> Status Update </a>
 					</div>
 				</td>
-				<td valign='top', align = 'left'>
+				<td valign='top' , align='left'>
 					<div class="vertical-menu">
 						<a href='friend_list.php'>Friend List</a>
 					</div>
@@ -147,10 +147,11 @@
 
 				?>
 		</table>
+		<?php if (isset($_SESSION["user_id"])) {
+			echo $_SESSION["name"];
+		} ?>
 		<footer align='center'>
-			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project. <?php if (isset($_SESSION["user_id"])) {
-																								echo $_SESSION["name"];
-																							} ?>
+			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project.
 		</footer>
 	</body>
 </div>
