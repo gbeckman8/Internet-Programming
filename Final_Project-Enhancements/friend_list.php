@@ -41,8 +41,8 @@
 			<tr>
 				<td colspan='4' align='center'> Your Friends:- </td>
 			</tr>
-			</table>
-			<table align='center'>
+		</table>
+		<table align='center'>
 			<?php
 			$user_id = $_SESSION["user_id"];
 			include 'mysql.php';
@@ -72,11 +72,12 @@
 				}
 			}
 			?>
-			</table>
-		
+		</table>
+
 		<footer align='center'>
 			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project.
 		</footer>
 	</body>
+</div>
 
 </html>
