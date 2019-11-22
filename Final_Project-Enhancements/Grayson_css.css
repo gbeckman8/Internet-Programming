@@ -38,10 +38,20 @@ a:hover{
 
 .vertical-menu {
     width: 100px;
-    
+}
+
+.vertical-menu-long {
+    width: 200px;
 }
 
 .vertical-menu a {
+    color: black;
+    display: block;
+    border-style: hidden double double;
+    border: 1px, black;
+}
+
+.vertical-menu-long a {
     color: black;
     display: block;
     border-style: hidden double double;

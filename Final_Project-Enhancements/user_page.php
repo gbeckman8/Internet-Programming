@@ -21,8 +21,8 @@
 		<!--Nav_Tabs-->
 		<table width='100%'>
 			<tr>
-				<td>
-					<div class="vertical-menu">
+				<td valign='top'>
+					<div class="vertical-menu-long">
 						<?php Session_start();
 						if (isset($_SESSION["user_id"])) {
 							echo "<a href='user_page.php'>";
@@ -35,6 +35,22 @@
 						<a href='signout.php'>Signout </a>
 					</div>
 				</td>
+				<td valign='top'>
+					<div class="vertical-menu">
+						<a href='friends.php'>Friends </a>
+					</div>
+				</td>
+				<td valign='top'>
+					<div class="vertical-menu">
+						<a href='update_status.php'> Status Update </a>
+					</div>
+				</td>
+				<td valign='top'>
+					<div class="vertical-menu">
+						<a href='friend_list.php'>Friend List</a>
+					</div>
+				</td>
+
 
 				<?php
 				include 'mysql.php';
@@ -91,18 +107,7 @@
 							<!--echo "<tr align='center' id='sam'> <td colspan='5'> <font color='green'>Login Successful, ".$_SESSION["name"]."! </font> </td> </tr>"; -->
 				<?php }
 						echo "<tr> 
-						<td width='5%' valign='top'> 
-							<table>
-								<tr align='center' bgcolor='lightgrey' class='td_bor'>
-									<td width='5%'> <a href='friends.php'>Friends </a></td> </tr>
-								<tr align='center' bgcolor='lightgrey' class='td_bor'> 
-									<td width='5%'> <a href='update_status.php'> Status Update </td> </tr>
-								<tr align='center' bgcolor='lightgrey' class='td_bor'>
-									<td width='5%'> <a href='friend_list.php'>Friend List</a></td></tr>
-							</table>
-						</td>
-				
-				<td colspan='4'>";
+						
 
 						echo "<table  cellpadding='4' cellspacing='5' width='100%' style='table-layout:fixed'> <col width='100%'> <tr align='centre'> <th> <h3> Updates from your Friends: </h3> </th> </tr> ";
 
