@@ -28,28 +28,22 @@
 						<a href='signout.php'>Signout </a>
 					</div>
 				</td>
-				<td valign='top' , align='left'>
-					<div class="vertical-menu">
-						<a href='friends.php'>Friends </a>
-					</div>
-				</td>
-				<td valign='top' , align='left'>
+
+				<td> </td>
+				<td valign='top' , align='right'>
 					<div class="vertical-menu">
 						<a href='update_status.php'> Status Update </a>
-					</div>
-				</td>
-				<td valign='top' , align='left'>
-					<div class="vertical-menu">
+						<a href='friends.php'>Friends </a>
 						<a href='friend_list.php'>Friend List</a>
 					</div>
 				</td>
 			</tr>
 			<tr>
-				<td colspan='4' align = 'center'> Your Friends:- </td>
+				<td colspan='4' align='center'> Your Friends:- </td>
 			</tr>
-
+			</table>
+			<table align='center'>
 			<?php
-
 			$user_id = $_SESSION["user_id"];
 			include 'mysql.php';
 			if ($resid) {
@@ -58,8 +52,8 @@
 				$count = MySQLi_Query($resid, "select frnd_two_id from are_friends where frnd_one_id = $user_id union select frnd_one_id from are_friends where frnd_two_id = $user_id");
 
 
-				echo " <table align='center' cellspacing='5' cellpadding='5'> 
-				<tr> <th> Name: </th> <th> Email: </th> <th> Gender: </th> </tr>";
+				echo "
+				<tr> <th> Name: </th> <th align='left'> Email: </th> <th align='right'> Gender: </th> </tr>";
 
 				while (($rows = MySQLi_Fetch_Row($count)) == True) {
 
@@ -70,21 +64,16 @@
 
 						while (($rows = MySQLi_Fetch_Row($result)) == True) {
 
-
-
 							echo "<tr align='center'>";
-							echo "<td> $rows[0] </td> <td> $rows[1] </td> <td> $rows[2] </td>";
+							echo "<td align='center'> $rows[0] </td> <td align='center'> $rows[1] </td> <td align='center'> $rows[2] </td>";
 							echo "</tr>";
 						}
 					}
 				}
-
-				echo "</table> ";
 			}
-
-
 			?>
-		</table>
+			</table>
+		
 		<footer align='center'>
 			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project.
 		</footer>
