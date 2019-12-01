@@ -27,12 +27,6 @@
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn">Menu</button>
 						<div id="myDropdown" class="dropdown-content">
-							<?php Session_start();
-							if (isset($_SESSION["user_id"])) {
-								echo "<a href='user_page.php'>";
-							} else {
-								echo "<a href='home.php'>";
-							} ?>Home </a>
 							<a href='send_message.php'>Send Message </a>
 							<a href='inbox.php'>Inbox (Only Recent Message) </a>
 							<a href='view_profile.php'>View Profile </a>

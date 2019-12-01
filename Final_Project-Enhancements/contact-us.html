@@ -3,6 +3,8 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 </head>
 
@@ -16,21 +18,24 @@
 		<table width='100%'>
 			<tr>
 				<td valign='top'>
-					<div class="vertical-menu">
-						<a href='home.php'>Home</a>
-						<a href='login.php'>Login </a>
-						<a href='secure_signup.php'>Sign-up </a>
-						<a href='about-us.html'>About-Us </a>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href='home.php'>Home</a>
+							<a href='login.php'>Login </a>
+							<a href='secure_signup.php'>Sign-up </a>
+							<a href='contact-us.html'>Contact-Us </a>
+						</div>
 					</div>
 				</td>
 			</tr>
-			
+
 		</table>
 		<h3 align='center'> Contact-Us </h3>
 		<p align='center'>
-				If you want to Contact-Us
-				or Send a suggestion to help us grow or if you want to do an investment,
-				you can mail the query or proposal here:- Google@Google.com
+			If you want to Contact-Us
+			or Send a suggestion to help us grow or if you want to do an investment,
+			you can mail the query or proposal here:- Google@Google.com
 		</p>
 
 		<footer align='center'>
