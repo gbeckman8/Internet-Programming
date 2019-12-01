@@ -124,6 +124,7 @@
 
 		<?php
 		include 'mysql.php';
+		include 'Grayson_security.php';
 
 		$name = $email = $age = $gender = $password = $count = $count_id = "";
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -153,7 +154,8 @@
 					$count = MySQLi_Query($resid, "select (max(id)+1) as count  from students");
 					$count_id = MySQLi_Fetch_Assoc($count);
 					if ($count_id["count"]) {
-						$query = "insert into students values (" . $count_id["count"] . ",'$name','$email',$age,'$gender','$password')";
+						$securepass = rev($password);
+						$query = "insert into students values (" . $count_id["count"] . ",'$name','$email',$age,'$gender','$securepass')";
 					} else {
 						$query = "insert into students values (1,'$name','$email',$age,'$gender','$password')";
 					}

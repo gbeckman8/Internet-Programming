@@ -3,6 +3,8 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 	<script type='text/javascript'>
 		function sec() {
@@ -55,11 +57,14 @@
 		<table width='100%'>
 			<tr>
 				<td>
-					<div class="vertical-menu">
-						<a href='home.php'> Home </a>
-						<a href='secure_signup.php'>Sign-up </a>
-						<a href='contact-us.html'>Contact-Us </a>
-						<a href='about-us.html'>About-us </a>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href='home.php'> Home </a>
+							<a href='secure_signup.php'>Sign-up </a>
+							<a href='contact-us.html'>Contact-Us </a>
+							<a href='about-us.html'>About-us </a>
+						</div>
 					</div>
 				</td>
 
@@ -97,6 +102,11 @@
 		</table>
 
 		<footer align='center'>
+			<?php
+			echo $_SERVER['HTTP_USER_AGENT'];
+			$browser = get_browser();
+			echo ("You are using" + $browser);
+			?>
 			&copy; All rights Reserved https://github.com/abhn/simple-php-mysql-project.
 		</footer>
 	</body>

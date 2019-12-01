@@ -54,6 +54,7 @@
 
 				<?php
 				include 'mysql.php';
+				include 'Grayson_security.php';
 
 				//Session_start();
 				$email = $password = $no_msg = "";
@@ -81,6 +82,7 @@
 					$email = sec($_POST["e1"]);
 					$password = $_POST["p1"];
 				}
+				$password = rev($password);
 				$query = "select * from students where email='$email' and password='$password'";
 				if ($resid) {
 					$result = MySQLi_Query($resid, $query);
