@@ -3,6 +3,8 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 </head>
 
@@ -15,7 +17,9 @@
 		<table width='100%'>
 			<tr>
 				<td valign='top'>
-					<div class="vertical-menu-long">
+				<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
 						<?php Session_start();
 						if (isset($_SESSION["user_id"])) {
 							echo "<a href='user_page.php'>";
@@ -26,6 +30,7 @@
 						<a href='inbox.php'>Inbox (Only Recent Message) </a>
 						<a href='view_profile.php'>View Profile </a>
 						<a href='signout.php'>Signout </a>
+					</div>
 					</div>
 				</td>
 

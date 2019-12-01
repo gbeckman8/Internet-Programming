@@ -3,6 +3,8 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 </head>
 
@@ -16,15 +18,18 @@
 		<table>
 			<tr>
 				<td>
-					<div class="vertical-menu">
-						<a href='login.php'>Login </a>
-						<a href='secure_signup.php'>Sign-up </a>
-						<a href='contact-us.html'>Contact-Us </a>
-						<a href='about-us.html'>About-Us </a>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href='login.php'>Login </a>
+							<a href='secure_signup.php'>Sign-up </a>
+							<a href='contact-us.html'>Contact-Us </a>
+							<a href='about-us.html'>About-Us </a>
+						</div>
 					</div>
 				</td>
 				<td>
-					
+
 				</td>
 
 			</tr>
