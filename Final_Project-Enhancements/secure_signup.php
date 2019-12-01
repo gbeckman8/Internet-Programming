@@ -3,6 +3,8 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 	<script type='text/javascript'>
 		function sec() {
@@ -70,12 +72,15 @@
 		<!--Nav_Tabs-->
 		<table width='100%'>
 			<tr>
-				<td valign = 'top'>
-					<div class="vertical-menu">
-						<a href='home.php'> Home </a>
-						<a href='login.php'>Login </a>
-						<a href='contact-us.html'>Contact-Us </a>
-						<a href='about-us.html'>About-us </a>
+				<td valign='top'>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href='home.php'> Home </a>
+							<a href='login.php'>Login </a>
+							<a href='contact-us.html'>Contact-Us </a>
+							<a href='about-us.html'>About-us </a>
+						</div>
 					</div>
 				</td>
 

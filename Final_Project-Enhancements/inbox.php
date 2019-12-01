@@ -3,10 +3,13 @@
 
 <head>
 	<link rel='stylesheet' href='Grayson_css.css'>
+	<script src="Grayson_Javascript.js">
+	</script>
 	<title> Student's Hangout </title>
 </head>
 
 <div class="container">
+
 	<body>
 		<!--Logo-->
 		<img src='images/logo.png' height='65%' width='100%'>
@@ -14,22 +17,26 @@
 		<table width='100%'>
 			<tr>
 				<td valign='top'>
-					<div class="vertical-menu-long">
-						<?php Session_start();
-						if (isset($_SESSION["user_id"])) {
-							echo "<a href='user_page.php'>";
-						} else {
-							echo "<a href='home.php'>";
-						} ?>Home </a>
-						<a href='send_message.php'>Send Message </a>
-						<a href='inbox.php'>Inbox (Only Recent Message) </a>
-						<a href='view_profile.php'>View Profile </a>
-						<a href='signout.php'>Signout </a>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">Menu</button>
+						<div id="myDropdown" class="dropdown-content">
+
+							<?php Session_start();
+							if (isset($_SESSION["user_id"])) {
+								echo "<a href='user_page.php'>";
+							} else {
+								echo "<a href='home.php'>";
+							} ?>Home </a>
+							<a href='send_message.php'>Send Message </a>
+							<a href='inbox.php'>Inbox (Only Recent Message) </a>
+							<a href='view_profile.php'>View Profile </a>
+							<a href='signout.php'>Signout </a>
+						</div>
 					</div>
 				</td>
 
 				<td> </td>
-				<td valign='top', align='right'>
+				<td valign='top' , align='right'>
 					<div class="vertical-menu">
 						<a href='update_status.php'> Status Update </a>
 						<a href='friends.php'>Friends </a>
